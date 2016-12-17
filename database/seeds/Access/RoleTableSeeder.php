@@ -12,6 +12,7 @@ class RoleTableSeeder extends Seeder
             DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         }
 
+        /*
         if (env('DB_DRIVER') == 'mysql') {
             DB::table(config('access.roles_table'))->truncate();
         } elseif (env('DB_DRIVER') == 'sqlite') {
@@ -19,23 +20,36 @@ class RoleTableSeeder extends Seeder
         } else {
             //For PostgreSQL or anything else
             DB::statement('TRUNCATE TABLE '.config('access.roles_table').' CASCADE');
-        }
+        }*/
 
-        //Create admin role, id of 1
+        //Create admin role, id of 99
         $role_model = config('access.role');
         $admin = new $role_model();
+        $admin->id = 99;
         $admin->name = 'Administrator';
         $admin->all = true;
-        $admin->sort = 1;
+        $admin->sort = 99;
         $admin->created_at = Carbon::now();
         $admin->updated_at = Carbon::now();
         $admin->save();
 
-        //id = 2
+        $role_model = config('access.role');
+        $moderator = new $role_model();
+        $moderator->id = 98;
+        $moderator->name = 'Moderator';
+        $moderator->all = true;
+        $moderator->sort = 98;
+        $moderator->created_at = Carbon::now();
+        $moderator->updated_at = Carbon::now();
+        $moderator->save();
+
+
+        //id = 1
         $role_model = config('access.role');
         $user = new $role_model();
+        $admin->id = 1;
         $user->name = 'User';
-        $user->sort = 2;
+        $user->sort = 1;
         $user->created_at = Carbon::now();
         $user->updated_at = Carbon::now();
         $user->save();

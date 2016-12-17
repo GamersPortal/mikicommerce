@@ -11,6 +11,7 @@ class UserRoleSeeder extends Seeder
             DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         }
 
+        /*
         if (env('DB_DRIVER') == 'mysql') {
             DB::table(config('access.assigned_roles_table'))->truncate();
         } elseif (env('DB_DRIVER') == 'sqlite') {
@@ -18,17 +19,21 @@ class UserRoleSeeder extends Seeder
         } else {
             //For PostgreSQL or anything else
             DB::statement('TRUNCATE TABLE '.config('access.assigned_roles_table').' CASCADE');
-        }
+        }*/
 
         //Attach admin role to admin user
         $user_model = config('auth.providers.users.model');
         $user_model = new $user_model();
-        $user_model::first()->attachRole(1);
+        $user_model::first()->attachRole(99);
+
+        $user_model = config('auth.providers.users.model');
+        $user_model = new $user_model();
+        $user_model::first()->attachRole(98);
 
         //Attach user role to general user
         $user_model = config('auth.providers.users.model');
         $user_model = new $user_model();
-        $user_model::find(2)->attachRole(2);
+        $user_model::find(2)->attachRole(1);
 
         if (env('DB_DRIVER') == 'mysql') {
             DB::statement('SET FOREIGN_KEY_CHECKS=1;');

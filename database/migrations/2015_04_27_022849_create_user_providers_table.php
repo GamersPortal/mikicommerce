@@ -12,21 +12,22 @@ class CreateUserProvidersTable extends Migration
      */
     public function up()
     {
+        /*
         Schema::create('user_providers', function (Blueprint $table) {
-            $table->increments('id')->unsigned();
+        
+        $table->increments('id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->string('provider');
             $table->string('provider_id');
             $table->string('avatar')->nullable();
             $table->timestamps();
 
-            /*
-             * Add Foreign/Unique/Index
-             */
+            
             $table->foreign('user_id')->references('id')
                 ->on('users')
                 ->onDelete('cascade');
         });
+        */
     }
 
     /**

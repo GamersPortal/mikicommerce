@@ -15,6 +15,7 @@ class PermissionDependencyTableSeeder extends Seeder
             DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         }
 
+        /*
         if (env('DB_DRIVER') == 'mysql') {
             DB::table(config('access.permission_dependencies_table'))->truncate();
         } elseif (env('DB_DRIVER') == 'sqlite') {
@@ -22,7 +23,7 @@ class PermissionDependencyTableSeeder extends Seeder
         } else {
             //For PostgreSQL or anything else
             DB::statement('TRUNCATE TABLE '.config('access.permission_dependencies_table').' CASCADE');
-        }
+        }*/
 
         /*
          * View access management needs view backend

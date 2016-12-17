@@ -12,6 +12,7 @@ class PermissionTableSeeder extends Seeder
             DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         }
 
+        /*
         if (env('DB_DRIVER') == 'mysql') {
             DB::table(config('access.permissions_table'))->truncate();
             DB::table(config('access.permission_role_table'))->truncate();
@@ -25,7 +26,7 @@ class PermissionTableSeeder extends Seeder
             DB::statement('TRUNCATE TABLE '.config('access.permissions_table').' CASCADE');
             DB::statement('TRUNCATE TABLE '.config('access.permission_role_table').' CASCADE');
             DB::statement('TRUNCATE TABLE '.config('access.permission_user_table').' CASCADE');
-        }
+        }*/
 
         /*
          * Don't need to assign any permissions to administrator because the all flag is set to true
