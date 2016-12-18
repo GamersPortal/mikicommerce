@@ -34,12 +34,12 @@ class StoreCategoryRequest extends Request
     public function rules()
     {
         $rules = [
-              'meta_title'       => 'required|min:3',
+              /*'meta_title'       => 'required|min:3',
               'meta_description' => 'required|min:10',
 
-              'image'          => 'required',
-              'name_en'        => 'required',
-              'description_en' => 'required',
+              'image'          => 'required',*/
+              /*'name_en'        => 'required',
+              'description_en' => 'required',*/
                  ];
 
         if (Re::has('status')) {

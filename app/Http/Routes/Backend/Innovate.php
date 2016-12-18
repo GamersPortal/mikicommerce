@@ -49,10 +49,27 @@ $router->resource('eav/category', 'Eav\Category\EavProductAttributeCategory');
 
 //$router->get('category/deleted', 'Category\CategoryController@deleted')->name('admin.category.deleted');
 $router->resource('category/description', 'Category\CategoryDescriptionController');
-$router->resource('category', 'Category\CategoryController');
-$router->get('category/create', 'Category\CategoryController@create')->name('admin.category.create');
+//$router->resource('category', 'Category\CategoryController');
+
+
+Route::group(['prefix'=>'admin'], function () {
+    Route::resource('category', 'Category\CategoryController',
+        ['names' => [
+            'index' => 'admin.category.index',
+            'create' => 'admin.category.create',
+            'update' => 'admin.category.update',
+            'edit' => 'admin.category.edit',
+            'store' => 'admin.category.store',
+            'show' => 'admin.category.show',
+            'destroy' => 'admin.category.destroy',
+        ]]);
+});
 $router->get('category/show/{id}', 'Category\CategoryController@show')->name('admin.category.show');
-$router->get('category/destroy/{id}', 'Category\CategoryController@destroy')->name('admin.category.destroy');
+
+/*$router->get('category/create', 'Category\CategoryController@create')->name('admin.category.create');
+$router->get('category/show/{id}', 'Category\CategoryController@show')->name('admin.category.show');
+$router->get('category/edit/{id}', 'Category\CategoryController@update')->name('admin.category.update);
+$router->get('category/destroy/{id}', 'Category\CategoryController@destroy')->name('admin.category.destroy');*/
 
 
 /*
@@ -63,7 +80,20 @@ $router->post('product/newproduct/non_downloadable', 'Product\ProductController@
 $router->post('product/newproduct', 'Product\ProductController@newProduct')->name('admin.product.newProduct');
 $router->get('product/newproduct', 'Product\ProductController@create')->name('admin.product.newProduct.get');
 $router->get('product/delete*', 'Product\ProductController@delete')->name('admin.product.newProduct.delete');
-$router->resource('product', 'Product\ProductController');
+
+Route::group(['prefix' => ''], function () {
+    Route::resource('product', 'Product\ProductController',
+        ['names' => [
+            'index' => 'admin.product.index',
+            'create' => 'admin.product.create',
+            'update' => 'admin.product.update',
+            'edit' => 'admin.product.edit',
+            'store' => 'admin.product.store',
+            'show' => 'admin.product.show',
+            'destroy' => 'admin.product.destroy',
+        ]]);
+});
+//$router->resource('product', 'Product\ProductController');
 
 /*
  * Activity Log Module Routes

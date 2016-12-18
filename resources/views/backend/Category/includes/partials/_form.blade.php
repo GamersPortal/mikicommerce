@@ -53,19 +53,6 @@
                         <div class="col-lg-10">
                                 <select id="parent_category" name="parent_category" class="form-control select2" style="width: 100%;">
                                     <option value="">{!! trans('category.parent_category') !!}</option>
-                                    @if($pageName == 'create')
-                                        @foreach ($categorys as $category)
-                                            @foreach ($category->category_description->category_description_translations as $trans)
-
-                                                <option value="{!! $category->id !!}">  {!! $trans->name  !!}</option>
-                                            @endforeach
-                                        @endforeach
-                                    @elseif($pageName == 'update')
-                                        @foreach ($categorys as $category_in)
-                                            <option value="{!! $category_in->id !!}" {!!  $category->id  == $category_in->id ? 'selected' : '' !!}>{!! $category_in->category_description->name  !!}</option>
-                                        @endforeach
-                                    @endif
-
                                 </select>
 
                             </div>

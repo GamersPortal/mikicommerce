@@ -16,33 +16,34 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Innovate\BaseModel;
 use Innovate\Products\Traits\Attribute\ProductAttribute;
 use Innovate\Products\Traits\Relationship\ProductRelationship;
-use Innovate\SEOProvider\ObjectFlat;
-use Sofa\Eloquence\Eloquence;
+//use Illuminate\Database\Eloquent\SoftDeletes; // <-- This is required
+//use Innovate\SEOProvider\ObjectFlat;
+//use Sofa\Eloquence\Eloquence;
 
 /**
  * Class Product.
  */
-class Product extends BaseModel implements ObjectFlat,SluggableInterface
+class Product extends BaseModel implements SluggableInterface
 {
     /*
      * This are trait definition's and a solution for the conflict inside them
      */
-    use SoftDeletes,ProductRelationship,ProductAttribute,SluggableTrait,Eloquence{
+    use SoftDeletes,SluggableTrait, ProductRelationship{
 
-        Eloquence::getAttribute  as getAttributeEloquence;
-        Translatable::getAttribute insteadof Eloquence;
+        //Eloquence::getAttribute  as getAttributeEloquence;
+        //Translatable::getAttribute insteadof Eloquence;
 
-        Eloquence::setAttribute  as setAttributeEloquence;
-        Translatable::setAttribute insteadof Eloquence;
+        //Eloquence::setAttribute  as setAttributeEloquence;
+        //Translatable::setAttribute insteadof Eloquence;
 
-        Eloquence::save  as saveEloquence;
-        Translatable::save insteadof Eloquence;
+        //Eloquence::save  as saveEloquence;
+        //Translatable::save insteadof Eloquence;
 
-        Eloquence::toArray   as toArrayEloquence;
-        Translatable::toArray  insteadof Eloquence;
+        //Eloquence::toArray   as toArrayEloquence;
+        //Translatable::toArray  insteadof Eloquence;
 
-        Eloquence::__isset   as __issetEloquence;
-        Translatable::__isset  insteadof Eloquence;
+        //Eloquence::__isset   as __issetEloquence;
+        //Translatable::__isset  insteadof Eloquence;
      }
 
     /**
@@ -50,7 +51,6 @@ class Product extends BaseModel implements ObjectFlat,SluggableInterface
      *
      * @var string
      */
-    public $translationModel = 'Innovate\Products\ProductTranslation';
 
 
     /**
@@ -58,7 +58,6 @@ class Product extends BaseModel implements ObjectFlat,SluggableInterface
      *
      * @var array
      */
-    public $translatedAttributes = ['name', 'cart_description', 'short_description', 'long_description'];
 
     /**
      * The database table used by the model.

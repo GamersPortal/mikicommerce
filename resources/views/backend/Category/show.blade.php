@@ -1,12 +1,11 @@
 @extends ('backend.layouts.master')
 
 @section('meta')
-    {!! app('seotools')->generate() !!}
 @endsection
 
 @section('page-header')
     <h1>
-        {{ $category->category_description->name }}
+        {{ $category->name }}
 
     </h1>
 @endsection
@@ -17,14 +16,14 @@
         <div class="box box-primary">
         <div class=" box-body box-profile ">
             @if($category->image != 'default.jpg')
-            <img class="profile-user-img img-responsive img-rectangle" src="{!! config('app.url').'/app/innovate/product/'.$category->image !!} " alt=" {{ $category->category_description->name }}"/>
+            <img class="profile-user-img img-responsive img-rectangle" src="{!! config('app.url').'/app/innovate/product/'.$category->image !!} " alt=" {{ $category->name }}"/>
             <a href=""><span class="label label-danger">Remove image  </span></a>
             @else
-                <img class="profile-user-img img-responsive img-rectangle" src="{!! config('app.url').'/app/innovate/product/'.$category->image !!} " alt=" {{ $category->category_description->name }}"/>
+                <img class="profile-user-img img-responsive img-rectangle" src="{!! config('app.url').'/app/innovate/product/'.$category->image !!} " alt=" {{ $category->name }}"/>
 
             @endif
 
-            <h3 class="profile-username text-center">{{ $category->category_description->name }}</h3>
+            <h3 class="profile-username text-center">{{ $category->name }}</h3>
             <a href="#" class="btn btn-danger btn-block" data-toggle="tooltip" data-placement="bottom" title="This will also delete all sub category's and products inside it !" ><b>Delete Catagory</b></a>
         </div><!-- box-body box-profile-->
 
@@ -32,7 +31,7 @@
 
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">About {{ $category->category_description->name }}</h3>
+                    <h3 class="box-title">About {{ $category->name }}</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                     <strong><i class="fa fa-book margin-r-5"></i> Created at</strong>
@@ -43,7 +42,7 @@
                     <hr>
 
                     <strong><i class="fa fa-file-text-o margin-r-5"></i> Description</strong>
-                    <p>{{ $category->category_description->description }}.</p>
+                    <p>{{ $category->description }}.</p>
                 </div><!-- /.box-body -->
             </div>
         </div>

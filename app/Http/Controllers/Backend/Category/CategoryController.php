@@ -63,7 +63,7 @@ class CategoryController extends Controller
     public function create()
     {
         return view('backend.Category.create')
-            ->withCategorys($this->category->eagerLoad('category_description'));
+            ->withCategorys($this->category->getAllCategory());
     }
 
     /**
@@ -110,11 +110,11 @@ class CategoryController extends Controller
     public function show($id, CategorySEOGenerator $seo)
     {
         $category = $this->category->findOrThrowException($id);
-        $seo->set($category);
+        //$seo->set($category);
+        //dd($category);
 
         return view('backend.Category.show')
-            ->withCategory($category)
-            ->withCategorys($this->category->eagerLoad('category_description'));
+            ->withCategory($category);
     }
 
     /**

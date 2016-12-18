@@ -26,7 +26,7 @@
                     <ul>
                         @if($categorys->count() )
                             @foreach ($categorys as $category)
-                                @foreach ($category->category_description->category_description_translations as $trans)
+                                @foreach ($category->category_description_translations as $trans)
                                 <li>
                                     <div>
                                         <div class="pic">

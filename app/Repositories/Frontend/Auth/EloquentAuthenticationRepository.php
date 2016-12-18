@@ -75,7 +75,7 @@ class EloquentAuthenticationRepository implements AuthenticationContract
 
             return true;
         }
-        dd($request->only('username', 'password'));
+        //dd($request->only('username', 'password'));
 
         throw new GeneralException('These credentials do not match our records.');
     }

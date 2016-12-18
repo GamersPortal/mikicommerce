@@ -8,16 +8,18 @@
  */
 namespace Innovate\Category;
 
+
 use Innovate\BaseModel;
-use Innovate\Category\Traits\Attribute\CategoryAttribute;
-use Innovate\Category\Traits\Relationship\CategoryRelationship;
-use Innovate\SEOProvider\ObjectFlat;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
+use Illuminate\Database\Eloquent\SoftDeletes; // <-- This is required
+
 
 /**
  * Class Category.
  */
-class Category extends BaseModel implements ObjectFlat
+class Category extends BaseModel implements SluggableInterface
 {
-    use CategoryRelationship,CategoryAttribute;
+    use SoftDeletes,SluggableTrait;
     protected $table = 'category';
 }

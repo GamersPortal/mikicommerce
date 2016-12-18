@@ -62,7 +62,7 @@
                                         <option value="">{!! trans('product.product_category') !!}</option>
                                         @if($pageName == 'create')
                                             @foreach ($categorys as $category)
-                                                @foreach ($category->category_description->category_description_translations as $trans)
+                                                @foreach ($category->category_description_translations as $trans)
                                                     <option value="{!! $category->id !!}"> {!! $trans->name !!}</option>
                                                 @endforeach
                                             @endforeach

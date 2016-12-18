@@ -32,8 +32,8 @@ class ProductSEOGenerator implements SEOProviderContract
      */
     public function SEOMeta(Category $category)
     {
-        SEOMeta::setTitle($category->category_description->name);
-        SEOMeta::setDescription($category->category_description->meta_description);
+        SEOMeta::setTitle($category->name);
+        SEOMeta::setDescription($category->meta_description);
         SEOMeta::addMeta('category:published_time', $category->created_at->toW3CString(), 'property');
     }
 
@@ -42,8 +42,8 @@ class ProductSEOGenerator implements SEOProviderContract
      */
     public function OpenGraph(Category $category)
     {
-        OpenGraph::setDescription($category->category_description->meta_description);
-        OpenGraph::setTitle($category->category_description->meta_title);
+        OpenGraph::setDescription($category->meta_description);
+        OpenGraph::setTitle($category->meta_title);
         OpenGraph::setUrl(config('app.url'));
         OpenGraph::addProperty('type', 'article');
         OpenGraph::addProperty('locale', 'en-us');
@@ -57,7 +57,7 @@ class ProductSEOGenerator implements SEOProviderContract
      */
     public function Twitter(Category $category)
     {
-        Twitter::setTitle($category->category_description->name);
+        Twitter::setTitle($category->name);
         Twitter::setSite('@InnovateEcommerce');
     }
 }

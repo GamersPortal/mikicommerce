@@ -33,7 +33,7 @@ class StoreProductRequest extends Request
     public function rules()
     {
         $rules = [
-            'meta_title'       => 'required|min:3',
+            /*'meta_title'       => 'required|min:3',
             'meta_description' => 'required|min:10',
 
             'image'                => 'required',
@@ -49,7 +49,7 @@ class StoreProductRequest extends Request
             'price'           => 'required',
             'previous_price'  => 'required',
             'stock'           => 'required',
-            'location'        => 'required',
+            'location'        => 'required',*/
 
         ];
 

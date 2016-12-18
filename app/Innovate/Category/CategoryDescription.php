@@ -12,7 +12,7 @@ namespace Innovate\Category;
 use Innovate\BaseModel;
 use Innovate\Category\Traits\Relationship\CategoryDescriptionRelationship;
 
-class CategoryDescription extends BaseModel
+class CategoryDescripton extends BaseModel
 {
     use CategoryDescriptionRelationship;
 

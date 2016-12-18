@@ -77,13 +77,14 @@ class AuthController extends Controller
         /*if ($throttles && $this->hasTooManyLoginAttempts($request)) {
             return $this->sendLockoutResponse($request);
         }*/
+        //dd($_POST);
 
-        $username = $request['email'];
-        $request['username'] = $username;
+
+        //$username = $request['email'];
+        //$request['username'] = $username;
 
         //Don't know why the exception handler is not catching this
         try {
-            //dd($request);
             $this->auth->login($request);
 
             /*if ($throttles) {

@@ -181,7 +181,7 @@ return [
         //HieuLe\Active\ActiveServiceProvider::class,
         //Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
         //Laravel\Socialite\SocialiteServiceProvider::class,
-        Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         //Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
         //Orangehill\Iseed\IseedServiceProvider::class,
