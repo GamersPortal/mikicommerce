@@ -17,8 +17,8 @@
 
                     <form method="POST" action="{!! config('app.url').'/auth/login' !!}">
                         {!! csrf_field() !!}
-                        <label> Email: </label>
-                        <input type="email" name="email" value="{{ old('email') }}">
+                        <label> Username: </label>
+                        <input type="username" name="username" value="{{ old('username') }}">
                         <label> Password: </label>
                         <input type="password" name="password" id="password">
                         <label>{{ trans('labels.remember_me') }}</label>

@@ -8,7 +8,7 @@ use App\Exceptions\GeneralException;
 use App\Models\Access\User\User;
 use App\Repositories\Frontend\User\UserContract;
 use Illuminate\Contracts\Auth\Guard;
-use Laravel\Socialite\Contracts\Factory as Socialite;
+//use Laravel\Socialite\Contracts\Factory as Socialite;
 
 /**
  * Class Registrar.
@@ -28,14 +28,15 @@ class EloquentAuthenticationRepository implements AuthenticationContract
      */
     private $users;
 
+    //Socialite $socialite
     /**
      * @param Socialite    $socialite
      * @param Guard        $auth
      * @param UserContract $users
      */
-    public function __construct(Socialite $socialite, Guard $auth, UserContract $users)
+    public function __construct(Guard $auth, UserContract $users)
     {
-        $this->socialite = $socialite;
+        //$this->socialite = $socialite;
         $this->users = $users;
         $this->auth = $auth;
     }
@@ -61,7 +62,7 @@ class EloquentAuthenticationRepository implements AuthenticationContract
      */
     public function login($request)
     {
-        if ($this->auth->attempt($request->only('email', 'password'), $request->has('remember'))) {
+        if ($this->auth->attempt($request->only('username', 'password'), $request->has('remember'))) {
             $this->isBannedOrDeactivated($this->auth->user());
 
             if ($this->auth->user()->confirmed == 0) {
@@ -74,6 +75,7 @@ class EloquentAuthenticationRepository implements AuthenticationContract
 
             return true;
         }
+        dd($request->only('username', 'password'));
 
         throw new GeneralException('These credentials do not match our records.');
     }

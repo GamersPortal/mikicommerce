@@ -14,9 +14,9 @@
                     {!! Form::open(['url' => 'auth/login', 'class' => 'form-horizontal', 'role' => 'form']) !!}
 
                         <div class="form-group">
-                            {!! Form::label('email', trans('validation.attributes.email'), ['class' => 'col-md-4 control-label']) !!}
+                            {!! Form::label('username', trans('validation.attributes.username'), ['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-6">
-                                {!! Form::input('email', 'email', old('email'), ['class' => 'form-control']) !!}
+                                {!! Form::input('username', 'username', old('username'), ['class' => 'form-control']) !!}
                             </div>
                         </div>
 

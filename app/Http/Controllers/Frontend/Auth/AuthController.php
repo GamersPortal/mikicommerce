@@ -58,8 +58,8 @@ class AuthController extends Controller
      */
     public function getLogin()
     {
-        return Theme::view('auth.login')
-            ->withSocialiteLinks($this->getSocialLinks());
+        return Theme::view('auth.login');
+            //->withSocialiteLinks($this->getSocialLinks());
     }
 
     /**
@@ -74,26 +74,30 @@ class AuthController extends Controller
         // the IP address of the client making these requests into this application.
         $throttles = $this->isUsingThrottlesLoginsTrait();
 
-        if ($throttles && $this->hasTooManyLoginAttempts($request)) {
+        /*if ($throttles && $this->hasTooManyLoginAttempts($request)) {
             return $this->sendLockoutResponse($request);
-        }
+        }*/
+
+        $username = $request['email'];
+        $request['username'] = $username;
 
         //Don't know why the exception handler is not catching this
         try {
+            //dd($request);
             $this->auth->login($request);
 
-            if ($throttles) {
+            /*if ($throttles) {
                 $this->clearLoginAttempts($request);
-            }
+            }*/
 
             return redirect()->intended('/');
         } catch (GeneralException $e) {
             // If the login attempt was unsuccessful we will increment the number of attempts
             // to login and redirect the user back to the login form. Of course, when this
             // user surpasses their maximum number of attempts they will get locked out.
-            if ($throttles) {
+            /*if ($throttles) {
                 $this->incrementLoginAttempts($request);
-            }
+            }*/
 
             return redirect()->back()->withInput()->withFlashDanger($e->getMessage());
         }
