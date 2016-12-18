@@ -10,16 +10,32 @@ namespace Innovate\Category;
 
 
 use Innovate\BaseModel;
-use Cviebrock\EloquentSluggable\SluggableInterface;
-use Cviebrock\EloquentSluggable\SluggableTrait;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\SoftDeletes; // <-- This is required
 
 
 /**
  * Class Category.
  */
-class Category extends BaseModel implements SluggableInterface
+class Category extends BaseModel
 {
-    use SoftDeletes,SluggableTrait;
+    use SoftDeletes,Sluggable;
     protected $table = 'category';
+
+    /**
+     * Sluggable configuration.
+     *
+     * @var array
+     */
+    public function sluggable() {
+        return [
+            'slug' => [
+                'source'         => 'name',
+                'separator'      => '-',
+                'save_to'    => 'slug',
+                'includeTrashed' => true,
+            ]
+        ];
+    }
+
 }

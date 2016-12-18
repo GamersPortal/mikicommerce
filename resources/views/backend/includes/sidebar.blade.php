@@ -1,150 +1,73 @@
-          <!-- Left side column. contains the logo and sidebar -->
-          <aside class="main-sidebar">
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
 
-            <!-- sidebar: style can be found in sidebar.less -->
-            <section class="sidebar">
-              <!-- Sidebar user panel (optional) -->
-              <div class="user-panel">
-                <div class="pull-left image">
-                  <img src="{!! access()->user()->picture !!}" class="img-circle" alt="User Image" />
-                </div>
-                <div class="pull-left info">
-                  <p>{{ access()->user()->name }}</p>
-                  <!-- Status -->
-                  <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                </div>
-              </div>
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar Menu -->
+        <ul class="sidebar-menu">
+            <li class="header">{{ trans('menus.general') }}</li>
 
-              <!-- search form (Optional) -->
-              <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                  <input type="text" name="q" class="form-control" placeholder="{{ trans('strings.search_placeholder') }}"/>
-                  <span class="input-group-btn">
-                    <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-                  </span>
-                </div>
-              </form>
-              <!-- /.search form -->
-
-              <!-- Sidebar Menu -->
-              <ul class="sidebar-menu">
-                <li class="header">{{ trans('menus.general') }}</li>
-
-                <!-- Optionally, you can add icons to the links -->
-                <li class="menu-open"><a href="{!!route('admin.dashboard')!!}"><span>{{ trans('menus.dashboard') }}</span></a></li>
-
-
-                <li class="menu-open treeview">
-                  <a href="#">
-                    <span>{{ trans('innovate.menus.ecommerce') }}</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                  </a>
-
-
-                  <ul class="treeview-menu menu-open" style="display: block;">
-                      <!--  Sales -->
-                      <li class="menu-open treeview">
-                          <a href="#">
-                              <span>{{ trans('innovate.menus.sales') }}</span>
-                              <i class="fa fa-angle-left pull-right"></i>
-                          </a>
-                          <ul class="treeview-menu menu-open" style="display: block;">
-                              <li class="">
-                                  <a href="{!! url('admin/order') !!}">{{ trans('innovate.menus.order') }}</a>
-                              </li>
-                              <li class="">
-                                  <a href="{!! url('admin/stock') !!}">{{ trans('innovate.menus.stock') }}</a>
-                              </li>
-                          </ul>
-                      </li>
-                      <!--  End Sales -->
-
-                      <!--  Catalog -->
-                      <li class="treeview">
-                          <a href="#">
-                              <span>{{ trans('innovate.menus.catalog') }}</span>
-                              <i class="fa fa-angle-left pull-right"></i>
-                          </a>
-                          <ul class="treeview-menu" style="display: block;">
-
-                          <li class="treeview">
-                          <a href="#">
-                              <span>{{ trans('innovate.menus.eav_product') }}</span>
-                              <i class="fa fa-angle-left pull-right"></i>
-                          </a>
-                          <ul class="treeview-menu menu-open" style="display: block;">
-                              <li class="">
-                                  <a href="{!! url('admin/eav/category') !!}">{{ trans('innovate.menus.product_attribute_category') }}</a>
-                              </li>
-                              <li class="">
-                                  <a href="{!! url('admin/eav/attribute') !!}">{{ trans('innovate.menus.product_attribute') }}</a>
-                              </li>
-                          </ul>
-                      </li>
-                      <li class="active treeview">
-                          <a href="#">
-                              <span>{{ trans('innovate.menus.category') }}</span>
-                              <i class="fa fa-angle-left pull-right"></i>
-                          </a>
-                          <ul class="treeview-menu menu-open" style="display: block;">
-                              <li class="">
-                                  <a href="{!! url('admin/category') !!}">{{ trans('innovate.menus.product_category') }}</a>
-                              </li>
-
-                          </ul>
-                      </li>
-
-
-                      <li class="active">
-                          <a href="{!! url('admin/product') !!}">{{ trans('innovate.menus.product') }}</a>
-                      </li>
-
-
-                          </ul>
-                   </li>
-                      <!--  End Catalog -->
+            <!--  Catalog -->
+            <ul class="treeview-menu menu-open" style="display: block;">
+                <li class=" treeview menu-open">
+                    <a href="#">
+                        <span>{{ trans('innovate.menus.category') }}</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu menu-open" style="display: block;">
                         <li class="">
-                          <a href="">tax?</a>
+                            <a href="{!! url('admin/category') !!}">{{ trans('innovate.menus.product_category') }}</a>
                         </li>
 
-                         <li class="treeview">
-                          <a href="#">
-                              <span>{{ trans('innovate.menus.static_pages') }}</span>
-                              <i class="fa fa-angle-left pull-right"></i>
-                          </a>
-                          <ul class="treeview-menu" style="display: block;">
-                              <li class="">
-                                  <a href="{!! url('admin/bank_transfer_info') !!}">{{ trans('innovate.menus.bank_info') }}</a>
-                              </li>
-                              <li class="">
-                                  <a href="{!! url('admin/check_out_agreement') !!}">{{ trans('innovate.menus.check_out_agreement') }}</a>
-                              </li>
-                          </ul>
-                         </li>
-
-                  </ul>
+                    </ul>
                 </li>
 
 
-                  <li class=""><a href="{!!url('admin/access/users')!!}"><span>{{ trans('menus.access_management') }}</span></a></li>
+                <li class="active">
+                    <a href="{!! url('admin/product') !!}">{{ trans('innovate.menus.product') }}</a>
+                </li>
+            </ul><!--  End Catalog -->
 
 
-                 <li class="treeview">
-                  <a href="#">
+            <!--  Sales -->
+            <ul class="treeview-menu menu-open" style="display: block;">
+                <li class="menu-open treeview">
+                    <a href="#">
+                        <span>{{ trans('innovate.menus.sales') }}</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu menu-open" style="display: block;">
+                        <li class="">
+                            <a href="{!! url('admin/order') !!}">{{ trans('innovate.menus.order') }}</a>
+                        </li>
+                        <li class="">
+                            <a href="{!! url('admin/stock') !!}">{{ trans('innovate.menus.stock') }}</a>
+                        </li>
+                    </ul>
+                </li>
+                <!--  End Sales -->
+
+            <li class=""><a
+                        href="{!!url('admin/access/users')!!}"><span>{{ trans('menus.access_management') }}</span></a>
+            </li>
+
+
+            <li class="treeview">
+                <a href="#">
                     <span>{{ trans('menus.log-viewer.main') }}</span>
                     <i class="fa fa-angle-left pull-right"></i>
-                  </a>
-                  <ul class="treeview-menu menu-open" style="display: block">
+                </a>
+                <ul class="treeview-menu menu-open" style="display: block">
                     <li class="">
-                      <a href="{!! url('admin/log-viewer') !!}">{{ trans('menus.log-viewer.dashboard') }}</a>
+                        <a href="{!! url('admin/log-viewer') !!}">{{ trans('menus.log-viewer.dashboard') }}</a>
                     </li>
                     <li class="">
-                      <a href="{!! url('admin/log-viewer/logs') !!}">{{ trans('menus.log-viewer.logs') }}</a>
+                        <a href="{!! url('admin/log-viewer/logs') !!}">{{ trans('menus.log-viewer.logs') }}</a>
                     </li>
-                  </ul>
-                </li>
+                </ul>
+            </li>
 
-              </ul><!-- /.sidebar-menu -->
-            </section>
-            <!-- /.sidebar -->
-          </aside>
+        </ul><!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+</aside>

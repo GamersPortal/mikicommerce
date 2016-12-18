@@ -8,12 +8,10 @@
  */
 namespace Innovate\Products;
 
-use Cviebrock\EloquentSluggable\SluggableInterface;
-use Cviebrock\EloquentSluggable\SluggableTrait;
+use Cviebrock\EloquentSluggable\Sluggable;
 //use Dimsav\Translatable\Translatable;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Innovate\BaseModel;
+use Illuminate\Database\Eloquent\Model;
 use Innovate\Products\Traits\Attribute\ProductAttribute;
 use Innovate\Products\Traits\Relationship\ProductRelationship;
 //use Illuminate\Database\Eloquent\SoftDeletes; // <-- This is required
@@ -23,12 +21,12 @@ use Innovate\Products\Traits\Relationship\ProductRelationship;
 /**
  * Class Product.
  */
-class Product extends BaseModel implements SluggableInterface
+class Product extends Model
 {
     /*
      * This are trait definition's and a solution for the conflict inside them
      */
-    use SoftDeletes,SluggableTrait, ProductRelationship{
+    use SoftDeletes, Sluggable, ProductRelationship{
 
         //Eloquence::getAttribute  as getAttributeEloquence;
         //Translatable::getAttribute insteadof Eloquence;
@@ -84,10 +82,10 @@ class Product extends BaseModel implements SluggableInterface
      *
      * @var array
      */
-    protected $sluggable = [
+    /*protected $sluggable = [
         'build_from' => 'sku',
         'save_to'    => 'slug',
-    ];
+    ];*/
 
     /**
      * The searchable attributes on the model with there relevance.
@@ -102,4 +100,22 @@ class Product extends BaseModel implements SluggableInterface
         'slug'                      => 10,
         'product_translations.name' => 15,
     ];
+
+    /**
+     * Sluggable configuration.
+     *
+     * @var array
+     */
+    public function sluggable() {
+        return [
+            'slug' => [
+                'source'         => 'sku',
+                'separator'      => '-',
+                'save_to'    => 'slug',
+                'includeTrashed' => true,
+            ]
+        ];
+    }
+
+
 }

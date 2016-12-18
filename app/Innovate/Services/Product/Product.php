@@ -34,4 +34,16 @@ class Product
     {
         return \Innovate\Products\Product::all();
     }
+
+    /*public function sluggable() {
+        return [
+            'slug' => [
+                'source'         => 'sku',
+                'separator'      => '-',
+                'save_to'    => 'slug',
+                'includeTrashed' => true,
+            ]
+        ];
+    }*/
+
 }
