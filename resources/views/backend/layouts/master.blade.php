@@ -11,8 +11,8 @@
         @yield('meta')
         <title>@yield('title', app_name())</title>
         @yield('before-styles-end')
-        {!! HTML::style(elixir('css/backend.css')) !!}
-        {!! HTML::style('css/backend/plugin/select2/select2.min.css') !!}
+        {!! Html::style(elixir('css/backend.css')) !!}
+        {!! Html::style('css/backend/plugin/select2/select2.min.css') !!}
 
         @yield('after-styles-end')
 
@@ -48,14 +48,14 @@
           @include('backend.includes.footer')
         </div><!-- ./wrapper -->
 
-        {!! HTML::script('js/vendor/jquery-1.11.2.min.js') !!}
-        {!! HTML::script('js/vendor/bootstrap.min.js') !!}
+        {!! Html::script('js/vendor/jquery-1.11.2.min.js') !!}
+        {!! Html::script('js/vendor/bootstrap.min.js') !!}
 
         @yield('before-scripts-end')
-        {!! HTML::script(elixir('js/backend.js')) !!}
+        {!! Html::script(elixir('js/backend.js')) !!}
         @yield('after-scripts-end')
 
-        {!! HTML::script('css/backend/plugin/select2/select2.full.min.js') !!}
+        {!! Html::script('css/backend/plugin/select2/select2.full.min.js') !!}
 
         <script>
             $(function () {

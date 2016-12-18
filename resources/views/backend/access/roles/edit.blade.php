@@ -10,7 +10,7 @@
 @endsection
 
 @section('after-styles-end')
-    {!! HTML::style('css/backend/plugin/jstree/themes/default/style.min.css') !!}
+    {!! Html::style('css/backend/plugin/jstree/themes/default/style.min.css') !!}
 @stop
 
 @section('content')
@@ -179,8 +179,8 @@
 @stop
 
 @section('after-scripts-end')
-    {!! HTML::script('js/backend/plugin/jstree/jstree.min.js') !!}
-    {!! HTML::script('js/backend/access/roles/script.js') !!}
+    {!! Html::script('js/backend/plugin/jstree/jstree.min.js') !!}
+    {!! Html::script('js/backend/access/roles/script.js') !!}
 
     <script>
         $(function() {

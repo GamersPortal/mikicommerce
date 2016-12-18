@@ -50,8 +50,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        $allcategories = $this->category->getAllCategory();
         return view('backend.Category.index')
-            ->withCategorys($this->category->eagerLoad('category_description', 9));
+            ->withCategorys($allcategories);
     }
 
     /**

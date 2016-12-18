@@ -10,7 +10,7 @@ namespace Innovate\Products;
 
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
-use Dimsav\Translatable\Translatable;
+//use Dimsav\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Innovate\BaseModel;
@@ -27,7 +27,7 @@ class Product extends BaseModel implements ObjectFlat,SluggableInterface
     /*
      * This are trait definition's and a solution for the conflict inside them
      */
-    use Translatable,SoftDeletes,ProductRelationship,ProductAttribute,SluggableTrait,Eloquence{
+    use SoftDeletes,ProductRelationship,ProductAttribute,SluggableTrait,Eloquence{
 
         Eloquence::getAttribute  as getAttributeEloquence;
         Translatable::getAttribute insteadof Eloquence;

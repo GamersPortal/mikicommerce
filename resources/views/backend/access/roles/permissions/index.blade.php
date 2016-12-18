@@ -12,7 +12,7 @@
 @endsection
 
 @section('after-styles-end')
-    {!! HTML::style('css/backend/plugin/nestable/jquery.nestable.css') !!}
+    {!! Html::style('css/backend/plugin/nestable/jquery.nestable.css') !!}
 @stop
 
 @section('content')
@@ -205,7 +205,7 @@
 @stop
 
 @section('after-scripts-end')
-    {!! HTML::script('js/backend/plugin/nestable/jquery.nestable.js') !!}
+    {!! Html::script('js/backend/plugin/nestable/jquery.nestable.js') !!}
 
     <script>
         $(function() {
@@ -213,7 +213,7 @@
             hierarchy.nestable({maxDepth:2});
 
             hierarchy.on('change', function() {
-                @permission('sort-permission-groups')
+
                     $.ajax({
                         url : "{!! route('admin.access.roles.groups.update-sort') !!}",
                         type: "post",
@@ -228,9 +228,7 @@
                             toastr.error("An unknown error occurred: " + errorThrown);
                         }
                     });
-                @else
-                    toastr.error("You do not have permission to do that.");
-                @endauth
+
             });
         });
     </script>

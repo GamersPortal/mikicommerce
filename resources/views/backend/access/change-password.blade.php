@@ -3,7 +3,7 @@
 @section ('title', 'User Management | Change User Password')
 
 @section ('before-styles-end')
-    {!! HTML::style('css/plugin/jquery.onoff.css') !!}
+    {!! Html::style('css/plugin/jquery.onoff.css') !!}
 @stop
 
 @section('page-header')

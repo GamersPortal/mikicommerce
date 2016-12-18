@@ -170,6 +170,6 @@
 @stop
 
 @section('after-scripts-end')
-    {!! HTML::script('js/backend/access/permissions/script.js') !!}
-    {!! HTML::script('js/backend/access/users/script.js') !!}
+    {!! Html::script('js/backend/access/permissions/script.js') !!}
+    {!! Html::script('js/backend/access/users/script.js') !!}
 @stop

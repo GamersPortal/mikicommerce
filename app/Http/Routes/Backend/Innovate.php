@@ -50,13 +50,14 @@ $router->resource('eav/category', 'Eav\Category\EavProductAttributeCategory');
 //$router->get('category/deleted', 'Category\CategoryController@deleted')->name('admin.category.deleted');
 $router->resource('category/description', 'Category\CategoryDescriptionController');
 $router->resource('category', 'Category\CategoryController');
+$router->get('category/create', 'Category\CategoryController@create')->name('admin.category.create');
+$router->get('category/show/{id}', 'Category\CategoryController@show')->name('admin.category.show');
+$router->get('category/destroy/{id}', 'Category\CategoryController@destroy')->name('admin.category.destroy');
 
 
 /*
  * Product Module Routes
  */
-
-
 $router->post('product/newproduct/downloadable', 'Product\ProductController@storeDownloadable')->name('admin.product.store.downloadable');
 $router->post('product/newproduct/non_downloadable', 'Product\ProductController@storeNonDownloadable')->name('admin.product.store.non_downloadable');
 $router->post('product/newproduct', 'Product\ProductController@newProduct')->name('admin.product.newProduct');
@@ -67,12 +68,35 @@ $router->resource('product', 'Product\ProductController');
 /*
  * Activity Log Module Routes
  */
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('activity_log', 'Activity\ActivityController',
+        ['names' => [
+            'create' => 'admin.activity_log.create',
+            'update' => 'admin.activity_log.update',
+            'edit' => 'admin.activity_log.edit',
+            'store' => 'admin.activity_log.store',
+            'show' => 'admin.activity_log.show',
+            'destroy' => 'admin.activity_log.destroy',
+        ]]);
+});
+
 $router->get('activity_log/flush', 'Activity\ActivityController@flush')->name('admin.activity_log.flush');
-$router->resource('activity_log', 'Activity\ActivityController');
 
 
 /*
  * Orders
  */
+Route::group([], function () {
+    Route::resource('order', 'Order\OrderController',
+        ['names' => [
+            'index' => 'admin.order.index',
+            'create' => 'admin.order.create',
+            'update' => 'admin.order.update',
+            'edit' => 'admin.order.edit',
+            'store' => 'admin.order.store',
+            'show' => 'admin.order.show',
+            'destroy' => 'admin.order.destroy',
+        ]]);
+});
 $router->get('order/deleted', 'Order\OrderController@deleted')->name('admin.order.deleted');
-$router->resource('order', 'Order\OrderController');
+

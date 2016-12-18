@@ -176,7 +176,7 @@ return [
 
         Arcanedev\LogViewer\LogViewerServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
-        //Creativeorange\Gravatar\GravatarServiceProvider::class,
+        Creativeorange\Gravatar\GravatarServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         //HieuLe\Active\ActiveServiceProvider::class,
         //Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
@@ -265,11 +265,11 @@ return [
          * Third party aliases
          * Innovate E-commerce Dependent
          */
-        //'Active'        => HieuLe\Active\Facades\Active::class,
+        //'Active' => HieuLe\Active\Facades\Active::class,
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Form' => Collective\Html\FormFacade::class,
-        //'Gravatar'      => Creativeorange\Gravatar\Facades\Gravatar::class,
+        'Gravatar' => Creativeorange\Gravatar\Facades\Gravatar::class,
         'Html' => Collective\Html\HtmlFacade::class,
         //'Socialize'     => Laravel\Socialite\Facades\Socialite::class,
         //'SEOMeta'       => Artesaos\SEOTools\Facades\SEOMeta::class,

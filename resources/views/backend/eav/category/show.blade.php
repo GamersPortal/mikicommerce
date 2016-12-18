@@ -4,8 +4,8 @@
 @section ('title',trans('eav.eav_category_management'))
 
 @section('after-styles-end')
-    {!! HTML::style('css/backend/plugin/datatables/dataTables.bootstrap.css') !!}
-    {!! HTML::style('css/backend/plugin/nestable/jquery.nestable.css') !!}
+    {!! Html::style('css/backend/plugin/datatables/dataTables.bootstrap.css') !!}
+    {!! Html::style('css/backend/plugin/nestable/jquery.nestable.css') !!}
 @endsection
 
 
@@ -46,7 +46,7 @@
 </div>
     @endsection
 @section('after-scripts-end')
-    {!! HTML::script('js/backend/plugin/nestable/jquery.nestable.js') !!}
+    {!! Html::script('js/backend/plugin/nestable/jquery.nestable.js') !!}
 
     <script>
         $(function() {
@@ -55,9 +55,8 @@
 
             hierarchy.on('change', function() {
                 toastr.info("For Now Don't touch those Positions!!");
-                /*
-                @permission('sort-permission-groups')
-                $.ajax({
+
+                /*$.ajax({
                     url : "{!! route('admin.access.roles.groups.update-sort') !!}",
                     type: "post",
                     data : {data:hierarchy.nestable('serialize')},
@@ -70,11 +69,8 @@
                     error: function (jqXHR, textStatus, errorThrown) {
                         toastr.error("An unknown error occurred: " + errorThrown);
                     }
-                });
-                @else
-                    toastr.error("You do not have permission to do that.");
-                @endauth
-                */
+                });*/
+
             });
         });
     </script>

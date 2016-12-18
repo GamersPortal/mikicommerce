@@ -44,11 +44,11 @@ trait UserAttribute
          * If user is logged in with a social account, use the avatar associated if available
          * Otherwise fallback to the gravatar associated with the social email
          */
-        if (session('socialite_provider')) {
+        /*if (session('socialite_provider')) {
             if ($avatar = $this->providers()->where('provider', session('socialite_provider'))->first()->avatar) {
                 return $avatar;
             }
-        }
+        }*/
 
         /*
          * Otherwise get the gravatar of the users email account

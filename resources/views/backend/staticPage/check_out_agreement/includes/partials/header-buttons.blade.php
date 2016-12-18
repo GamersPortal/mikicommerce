@@ -6,9 +6,9 @@
           <ul class="dropdown-menu" role="menu">
             <li><a href="{{route('admin.check_out_agreement.index')}}">{{ trans('innovate.static_page.all_check_out_agreement') }}</a></li>
 
-            @permission('create-users')
+
                 <li><a href="{{route('admin.check_out_agreement.create')}}">{{ trans('innovate.static_page.create_check_out_agreement') }}</a></li>
-            @endauth
+
 
             <li class="divider"></li>
             <li><a href="{{route('admin.check_out_agreement.deleted')}}">{{ trans('innovate.static_page.deleted_check_out_agreement') }}</a></li>

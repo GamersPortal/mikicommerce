@@ -165,5 +165,5 @@
 @stop
 
 @section('after-scripts-end')
-    {!! HTML::script('js/backend/access/permissions/dependencies/script.js') !!}
+    {!! Html::script('js/backend/access/permissions/dependencies/script.js') !!}
 @stop

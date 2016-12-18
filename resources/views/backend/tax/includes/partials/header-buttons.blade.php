@@ -6,9 +6,9 @@
           <ul class="dropdown-menu" role="menu">
             <li><a href="{{route('admin.tax.index')}}">{{ trans('tax.menus.header_buttons.tax.all') }}</a></li>
 
-            @permission('create-users')
+
                 <li><a href="{{route('admin.tax.create')}}">{{ trans('tax.menus.header_buttons.tax.create_tax') }}</a></li>
-            @endauth
+
 
           </ul>
         </div>

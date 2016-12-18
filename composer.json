@@ -39,7 +39,10 @@
     "michelf/php-markdown": "^1.6",
     "maatwebsite/laravel-sidebar": "^2.1",
     "baum/baum": "^1.1",
-        "caffeinated/themes": "^3.0"
+        "caffeinated/themes": "^3.0",
+        "creativeorange/gravatar": "~1.0",
+        "hieu-le/active": "^3.3",
+        "hieu-le/laravel-alert": "^2.1"
     },
     "require-dev": {
         "symfony/dom-crawler": "~3.0",

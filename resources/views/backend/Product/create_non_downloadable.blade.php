@@ -15,7 +15,7 @@
     {!! Form::close() !!}
 @endsection
 @section('after-scripts-end')
-    {!! HTML::script('js/backend/plugin/ckeditor/ckeditor.js') !!}
+    {!! Html::script('js/backend/plugin/ckeditor/ckeditor.js') !!}
     <script>
         $(function () {
             // Replace the <textarea id="editor1"> with a CKEditor

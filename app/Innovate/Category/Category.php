@@ -19,7 +19,5 @@ use Innovate\SEOProvider\ObjectFlat;
 class Category extends BaseModel implements ObjectFlat
 {
     use CategoryRelationship,CategoryAttribute;
-
-
     protected $table = 'category';
 }

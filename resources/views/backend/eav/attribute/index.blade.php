@@ -3,7 +3,7 @@
 @section ('title', trans('eav.eav_attribute_management'))
 
 @section('after-styles-end')
-    {!! HTML::style('css/backend/plugin/datatables/dataTables.bootstrap.css') !!}
+    {!! Html::style('css/backend/plugin/datatables/dataTables.bootstrap.css') !!}
 @endsection
 
 @section('page-header')
@@ -87,8 +87,8 @@
 @stop
 
 @section('after-scripts-end')
-    {!! HTML::script('css/backend/plugin/datatables/jquery.dataTables.min.js') !!}
-    {!! HTML::script('css/backend/plugin/datatables/dataTables.bootstrap.min.js') !!}
+    {!! Html::script('css/backend/plugin/datatables/jquery.dataTables.min.js') !!}
+    {!! Html::script('css/backend/plugin/datatables/dataTables.bootstrap.min.js') !!}
     <script>
         $(function () {
             $('#datatable1').DataTable({

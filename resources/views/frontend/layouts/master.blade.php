@@ -11,7 +11,7 @@
         @yield('meta')
 
         @yield('before-styles-end')
-        {!! HTML::style(elixir('css/frontend.css')) !!}
+        {!! Html::style(elixir('css/frontend.css')) !!}
         @yield('after-styles-end')
 
         <!-- Fonts -->
@@ -21,7 +21,7 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
 
-        {!! HTML::script("js/vendor/modernizr-2.8.3.min.js") !!}
+        {!! Html::script("js/vendor/modernizr-2.8.3.min.js") !!}
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -37,10 +37,10 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="{{asset('js/vendor/jquery-1.11.2.min.js')}}"><\/script>')</script>
-        {!! HTML::script('js/vendor/bootstrap.min.js') !!}
+        {!! Html::script('js/vendor/bootstrap.min.js') !!}
 
         @yield('before-scripts-end')
-        {!! HTML::script(elixir('js/frontend.js')) !!}
+        {!! Html::script(elixir('js/frontend.js')) !!}
         @yield('after-scripts-end')
 
         @include('includes.partials.ga')
