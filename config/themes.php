@@ -50,7 +50,7 @@ return [
         |
         */
 
-        'absolute' => public_path('themes'),
+        'absolute' => base_path('themes'),
 
         /*
         |----------------------------------------------------------------------
